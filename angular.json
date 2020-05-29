@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SandboxAngularAkita"
+    }
+  },
+  "defaultProject": "SandboxAngularAkita",
+  "cli": {
+    "analytics": "d0bdd594-1fc6-468f-ae2b-7e9b63ec623f"
+  }
 }
