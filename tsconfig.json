@@ -1,7 +1,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
+    "paths": {
+      "~/service/*": ["./app/service/*"],
+      "~/pages/*": ["./app/pages/*"],
+      "~/common/*": ["./app/common/*"],
+      "~/components/*": ["./app/components/*"],
+      "~/directive/*": ["./app/directive/*"]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
