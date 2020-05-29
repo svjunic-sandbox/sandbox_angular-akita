@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { environment } from '~/environments/environment';
+
+import { enableAkitaProdMode } from '@datorama/akita';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,9 +15,14 @@ import { TopComponent } from './pages/top/top.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 
+if (environment.production) {
+  enableAkitaProdMode();
+}
+
 @NgModule({
   declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent],
   imports: [
+    environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

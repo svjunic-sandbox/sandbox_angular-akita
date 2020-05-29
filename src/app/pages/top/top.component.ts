@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { CounterService, CounterQuery } from '~/service/counter';
 
 @Component({
   selector: 'app-top',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top.component.scss']
 })
 export class TopComponent implements OnInit {
+  readonly count$: Observable<number>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private counterService: CounterService, private counterQuery: CounterQuery) {
+    this.count$ = this.counterQuery.select('count');
   }
 
+  ngOnInit(): void {}
+
+  handleCountupClick() {
+    this.counterService.increment();
+  }
 }
