@@ -20,4 +20,13 @@ export class CounterService {
       count: store.count + 1
     }));
   }
+
+  setCount(_count) {
+    const count = Number(_count);
+    if (typeof count !== 'number') return;
+    this.counterStore.update(store => ({
+      ...store,
+      count: count
+    }));
+  }
 }

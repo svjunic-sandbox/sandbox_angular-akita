@@ -2,3 +2,7 @@
 <p>
   {{ count$ | async }}
 </p>
+<label>
+  input:
+  <input type="text" [ngModel]="count$ | async" (input)="handleInput($event.target.value)" />
+</label>

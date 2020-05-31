@@ -13,11 +13,17 @@ export class TopComponent implements OnInit {
 
   constructor(private counterService: CounterService, private counterQuery: CounterQuery) {
     this.count$ = this.counterQuery.select('count');
+    console.log(this.count$);
   }
 
   ngOnInit(): void {}
 
   handleCountupClick() {
     this.counterService.increment();
+  }
+
+  handleInput(num) {
+    console.log(num);
+    this.counterService.setCount(num);
   }
 }

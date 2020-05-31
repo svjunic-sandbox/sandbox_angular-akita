@@ -2,7 +2,26 @@
   position: sticky;
   top: 0;
   left: 0;
+  display: flex;
+
   width: 100%;
   padding: 10px;
   border-bottom: 1px solid #ccc;
+
+  justify-content: space-around;
+
+  &-ci {
+    flex-grow: 1;
+  }
+
+  &-nav {
+    display: flex;
+    &_item {
+      padding: 0 10px;
+      border-left: 1px solid #ccc;
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
 }

@@ -11,22 +11,27 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopComponent } from './pages/top/top.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { TopComponent } from './pages/top/top.component';
+import { EntityStoreComponent } from './pages/entity-store/entity-store.component';
 
+// akita production modeを有効にするらしい
 if (environment.production) {
   enableAkitaProdMode();
 }
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, EntityStoreComponent],
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot([{ path: '', component: TopComponent }]),
+    RouterModule.forRoot([
+      { path: '', component: TopComponent },
+      { path: 'entity-store', component: EntityStoreComponent }
+    ]),
     FormsModule // 使うかわからんが
   ],
   providers: [],
