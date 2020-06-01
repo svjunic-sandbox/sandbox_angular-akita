@@ -4,12 +4,12 @@ import { Example1Store } from './example1.store';
 
 import { ID, guid } from '@datorama/akita';
 
-interface ICountListObject {
+export interface ICountListObject {
   tagname: string;
   count: number;
 }
 
-interface IExample1CountListObject {
+export interface IExample1CountListObject {
   id: ID;
   tagname: string;
   count: number;
@@ -22,8 +22,9 @@ const endpoint = 'http://127.0.0.1:3001/api';
 @Injectable({ providedIn: 'root' })
 export class Example1Service {
   isLoading: true;
-  taglist: string[];
-  countList: ICountListObject[];
+  //taglist: string[];
+  //countList: ICountListObject[];
+  //readonly entities: IExample1CountListObject[];
 
   constructor(private example1Store: Example1Store, private http: HttpClient) {}
 
@@ -42,10 +43,10 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
   }
 
   setTagList(res: any) {
-    this.taglist = res.data.getTweets.map(val => {
+    const taglist: string[] = res.data.getTweets.map(val => {
       return val.hashtags;
     });
-    return this.taglist;
+    return taglist;
   }
 
   setCountArray(taglist) {
@@ -56,25 +57,25 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
       counts[key] = counts[key] ? counts[key] + 1 : 1;
     }
 
-    this.countList = [];
+    const countList = [];
     for (const property in counts) {
       const obj: ICountListObject = {
         tagname: property,
         count: counts[property]
       };
-      this.countList.push(obj);
+      countList.push(obj);
     }
 
-    this.countList.forEach(val => {
+    countList.forEach(val => {
       this.example1Store.add({
         id: guid(),
         tagname: val.tagname,
         count: val.count
       } as IExample1CountListObject);
-      this.example1Store.add(this.countList);
+      this.example1Store.add(countList);
     });
 
-    return taglist;
+    return;
   }
 
   getList() {
@@ -82,13 +83,5 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
       map(res => this.setTagList(res)),
       map(taglist => this.setCountArray(taglist))
     );
-  }
-
-  getTaglist() {
-    return this.taglist;
-  }
-
-  getCountList() {
-    return this.countList;
   }
 }

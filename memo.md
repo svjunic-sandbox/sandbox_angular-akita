@@ -1,6 +1,6 @@
 # TODO
+[] EntityStore（あと表示するだけっぽい？
 [] フォームバリデーション
-[] EntityStore
 [] アニメーション関連
 
 # akita
@@ -11,9 +11,6 @@ https://angular.jp/guide/cheatsheet
 
 # 今後ハマりやすそう？なメモ
 基本的に、データをComponentのテンプレートで扱う場合にはObserbableで取り、async pipeを使う
-
-# 謎
-implements ちゃんと書いていないことも多い
 
 ## rest apiと連携できるっぽい？
 ```
@@ -26,6 +23,12 @@ implements ちゃんと書いていないことも多い
 https://qiita.com/massa142/items/271e7821b17ca59dbc76
 
 ## entity-store
-https://engineering.datorama.com/introducing-akitas-new-entity-service-at-your-service-c511a82fba22
+https://engineering.datorama.com/introducing-akitas-new-entity-service-at-your-service-c511a82fba22  
+https://medium.com/angular-in-depth/state-management-in-angular-using-akita-82f117d282dd
 
-EntityStoreを試すときにサービスをEntityStoreで作るとファイルは作られるけどクラスがかぶっておかしくなるので試すときは注意
+
+- EntityStoreを試すときにサービスをEntityStoreで作るとファイルは作られるけどクラスがかぶっておかしくなるので試すときは注意
+
+# 謎
+implements ちゃんと書いていないことも多い、全体的にゆるく使ってく感じ？
+sort機能あるけどangular側のsortよりこっち？
