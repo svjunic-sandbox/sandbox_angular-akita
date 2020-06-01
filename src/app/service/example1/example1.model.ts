@@ -1,11 +1,10 @@
-import { ID } from '@datorama/akita';
+//import { ID } from '@datorama/akita';
 
 export interface Example1 {
-  id: ID;
+  tagname: string;
+  count: number;
 }
 
 export function createExample1(params: Partial<Example1>) {
-  return {
-
-  } as Example1;
+  return {} as Example1;
 }

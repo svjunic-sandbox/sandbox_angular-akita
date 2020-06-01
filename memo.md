@@ -10,11 +10,16 @@ app.module.tsだけは自分でさわらないといけなから、そこだけ�
 https://angular.jp/guide/cheatsheet
 
 # 今後ハマりやすそう？なメモ
-
+基本的に、データをComponentのテンプレートで扱う場合にはObserbableで取り、async pipeを使う
 
 # 謎
 implements ちゃんと書いていないことも多い
 
+## rest apiと連携できるっぽい？
+```
+? Use Http Entity Service ? (from @datorama/akita-ng-entity-service) Yes
+```
+今回はapiがないので試してない
 
 # 参考
 ## store

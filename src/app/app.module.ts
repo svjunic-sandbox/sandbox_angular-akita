@@ -5,6 +5,10 @@ import { RouterModule } from '@angular/router';
 
 import { environment } from '~/environments/environment';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+
 import { enableAkitaProdMode } from '@datorama/akita';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { FormsModule } from '@angular/forms';
@@ -26,6 +30,9 @@ if (environment.production) {
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
