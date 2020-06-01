@@ -16,4 +16,9 @@ https://angular.jp/guide/cheatsheet
 implements ちゃんと書いていないことも多い
 
 
+# 参考
+## store
+https://qiita.com/massa142/items/271e7821b17ca59dbc76
 
+## entity-store
+https://engineering.datorama.com/introducing-akitas-new-entity-service-at-your-service-c511a82fba22
