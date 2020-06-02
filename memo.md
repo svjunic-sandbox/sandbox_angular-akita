@@ -32,3 +32,4 @@ https://medium.com/angular-in-depth/state-management-in-angular-using-akita-82f1
 # 謎
 implements ちゃんと書いていないことも多い、全体的にゆるく使ってく感じ？
 sort機能あるけどangular側のsortよりこっち？
+akita等サービスの格納先はstate？object

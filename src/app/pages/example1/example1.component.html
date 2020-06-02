@@ -1,5 +1,18 @@
 <p>example1 works!</p>
 
+<div [hidden]="isLoading">
+  <table>
+    <tr>
+      <th>タグ名</th>
+      <th>数</th>
+    </tr>
+    <tr *ngFor="let item of allState$ | async">
+      <td>{{ item.tagname }}</td>
+      <td>{{ item.count }}</td>
+    </tr>
+  </table>
+</div>
+
 <!--
 <div [hidden]="isLoading">
   <table mat-table [dataSource]="countListDataSource" matSort>
