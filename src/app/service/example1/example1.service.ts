@@ -37,13 +37,13 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
   }
 }`,
       variables: {
-        num: 10
-      }
+        num: 100,
+      },
     });
   }
 
   setTagList(res: any) {
-    const taglist: string[] = res.data.getTweets.map(val => {
+    const taglist: string[] = res.data.getTweets.map((val) => {
       return val.hashtags;
     });
     return taglist;
@@ -61,18 +61,23 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
     for (const property in counts) {
       const obj: ICountListObject = {
         tagname: property,
-        count: counts[property]
+        count: counts[property],
       };
       countList.push(obj);
     }
 
-    countList.forEach(val => {
+    countList.forEach((val) => {
+      console.log({
+        id: guid(),
+        tagname: val.tagname,
+        count: val.count,
+      } as IExample1CountListObject);
+
       this.example1Store.add({
         id: guid(),
         tagname: val.tagname,
-        count: val.count
+        count: val.count,
       } as IExample1CountListObject);
-      this.example1Store.add(countList);
     });
 
     return;
@@ -80,8 +85,8 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
 
   getList() {
     return this.getTweets().pipe(
-      map(res => this.setTagList(res)),
-      map(taglist => this.setCountArray(taglist))
+      map((res) => this.setTagList(res)),
+      map((taglist) => this.setCountArray(taglist))
     );
   }
 }
