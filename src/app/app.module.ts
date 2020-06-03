@@ -36,11 +36,15 @@ if (environment.production) {
     MatSortModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: '', component: TopComponent },
-      { path: 'example1', component: Example1Component },
-      { path: 'example1mat', component: Example1matComponent },
-    ]),
+    RouterModule.forRoot(
+      [
+        { path: '', component: TopComponent },
+        { path: 'example1', component: Example1Component },
+        { path: 'example1mat', component: Example1matComponent },
+      ],
+      //SPA
+      // { useHash: true }
+    ),
     FormsModule, // 使うかわからんが
   ],
   providers: [],
