@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { getEntityType } from '@datorama/akita';
 
+import { MatButton } from '@angular/material/button';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 

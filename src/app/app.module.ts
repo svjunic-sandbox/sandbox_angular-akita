@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { environment } from '~/environments/environment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -34,6 +35,7 @@ if (environment.production) {
     BrowserAnimationsModule,
     MatTableModule,
     MatSortModule,
+    MatButtonModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(
@@ -41,7 +43,7 @@ if (environment.production) {
         { path: '', component: TopComponent },
         { path: 'example1', component: Example1Component },
         { path: 'example1mat', component: Example1matComponent },
-      ],
+      ]
       //SPA
       // { useHash: true }
     ),

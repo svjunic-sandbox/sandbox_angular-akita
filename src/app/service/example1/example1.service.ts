@@ -37,7 +37,7 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
   }
 }`,
       variables: {
-        num: 100,
+        num: 10,
       },
     });
   }
