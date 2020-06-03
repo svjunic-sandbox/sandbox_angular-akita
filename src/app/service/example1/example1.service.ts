@@ -66,6 +66,9 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
       countList.push(obj);
     }
 
+    // reloadボタンつけちゃったから一度全部消す
+    this.example1Store.remove();
+
     countList.forEach((val) => {
       //console.log({
       //  id: guid(),

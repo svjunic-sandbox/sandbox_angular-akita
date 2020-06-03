@@ -1,5 +1,9 @@
 <p>example1mat works!</p>
 
+<div>
+  <button mat-button color="accent" (click)="handleReloadClick()">Accent</button>
+</div>
+
 <div [hidden]="isLoading">
   <table mat-table [dataSource]="countListDataSource" matSort>
     <ng-container matColumnDef="tagname">

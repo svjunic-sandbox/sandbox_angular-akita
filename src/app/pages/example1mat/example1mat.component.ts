@@ -25,9 +25,9 @@ export class Example1matComponent implements OnInit {
 
   constructor(private example1Service: Example1Service, private example1Query: Example1Query) {
     this.isLoading = true;
-    example1Service.getList().subscribe(() => {
-      this.allState$ = this.example1Query.selectAll();
+    this.allState$ = this.example1Query.selectAll();
 
+    example1Service.getList().subscribe(() => {
       this.allState$.subscribe((list) => {
         this.countListDataSource.data = list;
         this.isLoading = false;
@@ -37,5 +37,14 @@ export class Example1matComponent implements OnInit {
 
   ngOnInit(): void {
     this.countListDataSource.sort = this.sort;
+  }
+
+  handleReloadClick() {
+    this.example1Service.getList().subscribe(() => {
+      this.allState$.subscribe((list) => {
+        this.countListDataSource.data = list;
+        this.isLoading = false;
+      });
+    });
   }
 }
