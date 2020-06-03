@@ -67,11 +67,11 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
     }
 
     countList.forEach((val) => {
-      console.log({
-        id: guid(),
-        tagname: val.tagname,
-        count: val.count,
-      } as IExample1CountListObject);
+      //console.log({
+      //  id: guid(),
+      //  tagname: val.tagname,
+      //  count: val.count,
+      //} as IExample1CountListObject);
 
       this.example1Store.add({
         id: guid(),

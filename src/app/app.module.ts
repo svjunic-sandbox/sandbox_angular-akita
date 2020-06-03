@@ -19,6 +19,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { TopComponent } from './pages/top/top.component';
 import { Example1Component } from './pages/example1/example1.component';
+import { Example1matComponent } from './pages/example1mat/example1mat.component';
 
 // akita production modeを有効にするらしい
 if (environment.production) {
@@ -26,7 +27,7 @@ if (environment.production) {
 }
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component],
+  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent],
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
@@ -37,11 +38,12 @@ if (environment.production) {
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: TopComponent },
-      { path: 'example1', component: Example1Component }
+      { path: 'example1', component: Example1Component },
+      { path: 'example1mat', component: Example1matComponent },
     ]),
-    FormsModule // 使うかわからんが
+    FormsModule, // 使うかわからんが
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

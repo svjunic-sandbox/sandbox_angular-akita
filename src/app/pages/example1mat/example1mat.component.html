@@ -1,0 +1,21 @@
+<p>example1mat works!</p>
+
+<div [hidden]="isLoading">
+  <table mat-table [dataSource]="countListDataSource" matSort>
+    <ng-container matColumnDef="tagname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>tagname</th>
+      <td mat-cell *matCellDef="let item">{{ item.tagname }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="count">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>count</th>
+      <td mat-cell *matCellDef="let item">{{ item.count }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+<div [hidden]="!isLoading">
+  <p>読込中</p>
+</div>
