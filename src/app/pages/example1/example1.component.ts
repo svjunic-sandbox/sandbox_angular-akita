@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subscription, interval, TimeInterval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, Subscription, interval, merge, EMPTY } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 import { getEntityType } from '@datorama/akita';
 
@@ -14,16 +14,28 @@ import { IExample1CountListObject, Example1Service, Example1Query } from '~/serv
 export class Example1Component implements OnInit, OnDestroy {
   isLoading = false;
 
+  main$: Observable<void>;
+  init$: Observable<void>;
   interval$: Observable<void>;
-  subscription: Subscription;
+
   allState$: Observable<getEntityType<IExample1CountListObject>[]>;
 
+  subscription: Subscription;
+
   constructor(private example1Service: Example1Service, private example1Query: Example1Query) {
+    this.init$ = EMPTY.pipe(
+      tap({
+        complete: () => this.loadData(),
+      })
+    );
+
     this.interval$ = interval(10000).pipe(map(() => this.loadData()));
+
+    this.main$ = merge(this.init$, this.interval$);
   }
 
   ngOnInit(): void {
-    this.subscription = this.interval$.subscribe(() => {
+    this.subscription = this.main$.subscribe(() => {
       console.log('subscription: interval');
     });
   }
@@ -32,8 +44,6 @@ export class Example1Component implements OnInit, OnDestroy {
     this.isLoading = true;
     this.example1Service.getList().subscribe(() => {
       this.isLoading = false;
-      console.log(this);
-      console.log(this.example1Service);
       this.allState$ = this.example1Query.selectAll();
     });
   }
