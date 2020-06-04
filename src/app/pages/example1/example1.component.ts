@@ -50,6 +50,8 @@ export class Example1Component implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     console.log('unsubscribe!');
+    // intervalは動き続けるので、勝手におわらない。
+    // ここの unsubscribeはたぶん正解
     this.subscription.unsubscribe();
   }
 }

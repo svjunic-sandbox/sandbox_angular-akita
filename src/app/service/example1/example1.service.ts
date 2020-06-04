@@ -15,18 +15,21 @@ export interface IExample1CountListObject {
   count: number;
 }
 
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 const endpoint = 'http://127.0.0.1:3001/api';
 
 @Injectable({ providedIn: 'root' })
 export class Example1Service {
-  isLoading: true;
+  isLoading: false;
   //taglist: string[];
   //countList: ICountListObject[];
   //readonly entities: IExample1CountListObject[];
 
-  constructor(private example1Store: Example1Store, private http: HttpClient) {}
+  constructor(private example1Store: Example1Store, private http: HttpClient) {
+    console.log('Example1Service constructor');
+    console.log(example1Store);
+  }
 
   private getTweets() {
     return this.http.post(endpoint, {
@@ -89,7 +92,8 @@ query($id:Int, $created_at:String, $num:Int, $newest:Boolean) {
   getList() {
     return this.getTweets().pipe(
       map((res) => this.setTagList(res)),
-      map((taglist) => this.setCountArray(taglist))
+      map((taglist) => this.setCountArray(taglist)),
+      tap(() => (this.isLoading = false))
     );
   }
 }
