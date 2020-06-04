@@ -1,7 +1,8 @@
 # TODO
-[] EntityStore（あと表示するだけっぽい？
+[] EntityStore
 [] フォームバリデーション
 [] アニメーション関連
+[] モジュール
 
 # akita
 angular全般で言えるっぽいが、cliで最初作れば色々やってくれて楽
