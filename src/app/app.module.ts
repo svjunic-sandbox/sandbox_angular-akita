@@ -22,10 +22,10 @@ import { FooterComponent } from './common/footer/footer.component';
 import { TopComponent } from './pages/top/top.component';
 import { Example1Component } from './pages/example1/example1.component';
 import { Example1matComponent } from './pages/example1mat/example1mat.component';
-import { Example2Component } from './src/app/pages/example2/example2.component';
-import { ViewchildComponent } from './src/app/pages/viewchild/viewchild.component';
-import { CounterComponent } from './src/app/pages/counter/counter.component';
-import { Example1sComponent } from './src/app/pages/example1s/example1s.component';
+import { Example2Component } from './pages/example2/example2.component';
+import { ViewchildComponent } from './pages/viewchild/viewchild.component';
+import { CounterComponent } from './pages/counter/counter.component';
+import { Example1sComponent } from './pages/example1s/example1s.component';
 
 // akita production modeを有効にするらしい
 if (environment.production) {

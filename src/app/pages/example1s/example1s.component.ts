@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { Example1sService } from '../../service/example1s.service';
+import { Example1sService } from '~/service/example1s/example1s.service';
 import { interval, Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
