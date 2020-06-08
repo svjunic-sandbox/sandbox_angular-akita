@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { MatListModule } from '@angular/material/list';
 
 import { enableAkitaProdMode } from '@datorama/akita';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
@@ -39,6 +40,7 @@ if (environment.production) {
     MatTableModule,
     MatSortModule,
     MatButtonModule,
+    MatListModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(
