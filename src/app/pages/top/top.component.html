@@ -1,17 +1,6 @@
-<button (click)="handleCountupClick()">カウント＋１</button>
-<p>
-  {{ count$ | async }}
-</p>
-<label>
-  input:
-  <input type="text" [ngModel]="count$ | async" (input)="handleInput($event.target.value)" />
-</label>
-
-<hr />
-
 <ul class="nav">
   <li class="nav_item">
-    <a routerLink="/">Top(Store)</a>
+    <a routerLink="/">Top</a>
   </li>
   <li class="nav_item">
     <a routerLink="/example1/">example1</a>
@@ -21,6 +10,9 @@
   </li>
   <li class="nav_item">
     <a routerLink="/example2/">example2</a>
+  </li>
+  <li class="nav_item">
+    <a routerLink="/counter/">counter</a>
   </li>
   <li class="nav_item">
     <a routerLink="/viewchild/">viewchild</a>

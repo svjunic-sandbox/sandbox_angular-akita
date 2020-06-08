@@ -23,6 +23,7 @@ import { Example1Component } from './pages/example1/example1.component';
 import { Example1matComponent } from './pages/example1mat/example1mat.component';
 import { Example2Component } from './src/app/pages/example2/example2.component';
 import { ViewchildComponent } from './src/app/pages/viewchild/viewchild.component';
+import { CounterComponent } from './src/app/pages/counter/counter.component';
 
 // akita production modeを有効にするらしい
 if (environment.production) {
@@ -30,7 +31,7 @@ if (environment.production) {
 }
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent],
+  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent],
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
@@ -46,6 +47,7 @@ if (environment.production) {
         { path: 'example1', component: Example1Component },
         { path: 'example1mat', component: Example1matComponent },
         { path: 'example2', component: Example2Component },
+        { path: 'counter', component: CounterComponent },
         { path: 'viewchild', component: ViewchildComponent },
       ]
       //SPA

@@ -1,0 +1,12 @@
+<p>counter works!</p>
+
+<hr />
+
+<button (click)="handleCountupClick()">カウント＋１</button>
+<p>
+  {{ count$ | async }}
+</p>
+<label>
+  input:
+  <input type="text" [ngModel]="count$ | async" (input)="handleInput($event.target.value)" />
+</label>
