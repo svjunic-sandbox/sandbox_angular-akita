@@ -1,8 +1,28 @@
 <p>example4 works!</p>
 
-<textarea [(ngModel)]="textarea" (input)="handleTextareaInput($event)" cols="30" rows="10"></textarea>
-
-<p [innerHTML]="textarea | br"></p>
-<p>{{ textarea | br }}</p>
-
-<textarea [value]="textarea2" (input)="handleTextarea2Input($event)" cols="30" rows="10"></textarea>
+<div class="flex">
+  <div>
+    <div>
+      <b>[(ngModel)]</b>
+    </div>
+    <textarea [(ngModel)]="textarea" (input)="handleTextareaInput($event)" rows="10"></textarea>
+  </div>
+  <div>
+    <div>
+      <b>[]と()</b>
+    </div>
+    <textarea [value]="textarea2" (input)="handleTextarea2Input($event)" rows="10"></textarea>
+  </div>
+  <div>
+    <div>
+      <b>[innerHTML]</b>
+    </div>
+    <p [innerHTML]="textarea | br"></p>
+  </div>
+  <div>
+    <div>
+      <b>｛｛ textarea | br ｝｝</b>
+    </div>
+    <p>{{ textarea | br }}</p>
+  </div>
+</div>

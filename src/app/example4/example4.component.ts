@@ -15,6 +15,7 @@ export class Example4Component implements OnInit, OnDestroy {
   ngOnInit(): void {
     // serviceでEventEmitterはアンチパターンらしく、rxjsで購読する
     // https://qiita.com/musou1500/items/941464943b547ca7674f
+    this.textarea2 = this.example4Service.text;
     this.example4Service.textChange$.subscribe((_text) => {
       this.textarea2 = _text;
     });
