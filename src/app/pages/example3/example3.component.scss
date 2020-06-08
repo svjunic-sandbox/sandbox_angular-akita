@@ -1,0 +1,16 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: #999;
+  margin: 10px;
+
+  &2 {
+    width: 140px;
+    height: 140px;
+    background: #999;
+  }
+}
+
+.hoge {
+  display: flex;
+}

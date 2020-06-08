@@ -1,11 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { environment } from '~/environments/environment';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; //アニメーション用
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -27,6 +28,7 @@ import { ViewchildComponent } from './pages/viewchild/viewchild.component';
 import { CounterComponent } from './pages/counter/counter.component';
 import { Example1sComponent } from './pages/example1s/example1s.component';
 import { Sample1Component } from './components/sample1/sample1.component';
+import { Example3Component } from './pages/example3/example3.component';
 
 // akita production modeを有効にするらしい
 if (environment.production) {
@@ -34,7 +36,7 @@ if (environment.production) {
 }
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent, Example1sComponent, Sample1Component],
+  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent, Example1sComponent, Sample1Component, Example3Component],
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
@@ -52,6 +54,7 @@ if (environment.production) {
         { path: 'example1', component: Example1Component },
         { path: 'example1mat', component: Example1matComponent },
         { path: 'example2', component: Example2Component },
+        { path: 'example3', component: Example3Component },
         { path: 'counter', component: CounterComponent },
         { path: 'viewchild', component: ViewchildComponent },
       ]

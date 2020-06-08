@@ -1,0 +1,21 @@
+<p>example3 works!</p>
+
+<p>state: {{ state }}</p>
+<p>state: {{ _animateState }}</p>
+
+<div>
+  <button mat-raised-button color="accent" (click)="handleClick()">Animate</button>
+</div>
+
+<p>アニメーションも用意されている。</p>
+
+<div class="hoge">
+  <div class="box" [@animateState]="_animateState">moge</div>
+  <div class="box" [@animateState]="_animateState">moge</div>
+  <div class="box" [@animateState]="_animateState">moge</div>
+  <div class="box" [@animateState]="_animateState">moge</div>
+  <div class="box" [@animateState]="_animateState">moge</div>
+  <div class="box" [@animateState]="_animateState">moge</div>
+  <div class="box" [@animateState]="_animateState">moge</div>
+</div>
+<div class="box2" [@animateState]="_animateState">moge</div>
