@@ -15,7 +15,7 @@ export class Example2Component implements OnInit, OnDestroy {
   interval$: Observable<void>;
   subscription: Subscription;
 
-  private intervalTime = 10000;
+  private intervalTime = 10;
 
   public enabled = true;
 
