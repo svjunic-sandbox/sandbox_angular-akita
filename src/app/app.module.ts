@@ -25,6 +25,7 @@ import { Example1matComponent } from './pages/example1mat/example1mat.component'
 import { Example2Component } from './src/app/pages/example2/example2.component';
 import { ViewchildComponent } from './src/app/pages/viewchild/viewchild.component';
 import { CounterComponent } from './src/app/pages/counter/counter.component';
+import { Example1sComponent } from './src/app/pages/example1s/example1s.component';
 
 // akita production modeを有効にするらしい
 if (environment.production) {
@@ -32,7 +33,7 @@ if (environment.production) {
 }
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent],
+  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent, Example1sComponent],
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
@@ -46,6 +47,7 @@ if (environment.production) {
     RouterModule.forRoot(
       [
         { path: '', component: TopComponent },
+        { path: 'example1s', component: Example1sComponent },
         { path: 'example1', component: Example1Component },
         { path: 'example1mat', component: Example1matComponent },
         { path: 'example2', component: Example2Component },
