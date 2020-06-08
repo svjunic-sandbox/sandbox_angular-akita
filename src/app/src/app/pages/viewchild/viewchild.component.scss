@@ -1,0 +1,17 @@
+.mogetan {
+  padding: 10px;
+  border: 1px solid #f00;
+
+  &-1 {
+    background: #f90;
+  }
+  &-2 {
+    background: #0f0;
+  }
+  &-3 {
+    background: #00f;
+  }
+  &-4 {
+    background: #f00;
+  }
+}
