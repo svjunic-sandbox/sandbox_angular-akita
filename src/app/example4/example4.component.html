@@ -1,0 +1,8 @@
+<p>example4 works!</p>
+
+<textarea [(ngModel)]="textarea" (input)="handleTextareaInput($event)" cols="30" rows="10"></textarea>
+
+<p [innerHTML]="textarea | br"></p>
+<p>{{ textarea | br }}</p>
+
+<textarea [value]="textarea2" (input)="handleTextarea2Input($event)" cols="30" rows="10"></textarea>
