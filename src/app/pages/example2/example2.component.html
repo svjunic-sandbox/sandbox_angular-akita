@@ -1,1 +1,11 @@
 <p>example2 works!</p>
+
+<p>{{ text }}</p>
+<hr />
+<div style="border: 1px solid #ccc; margin: 10px;padding:30px;">
+  <app-sample1 [text]="text" *ngIf="enabled"></app-sample1>
+</div>
+
+<hr />
+<p>ngIfでonDestroyが確認できる</p>
+<button mat-raised-button color="primary" (click)="handleDeleteClick()">Delete</button>
