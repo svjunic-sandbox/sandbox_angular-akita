@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top.component.scss'],
 })
 export class TopComponent implements OnInit {
+  hoge = 'mogeta';
+
   constructor() {}
 
   ngOnInit(): void {}

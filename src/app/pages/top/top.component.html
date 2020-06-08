@@ -8,3 +8,12 @@
   <a mat-list-item routerLink="/counter/">counter</a>
   <a mat-list-item routerLink="/viewchild/">viewchild</a>
 </mat-nav-list>
+
+<fieldset>
+  <label>
+    hogehoge:
+    <input type="text" [(ngModel)]="hoge" />
+    <input type="text" [ngModel]="hoge" />
+  </label>
+  <p>{{ hoge }}</p>
+</fieldset>
