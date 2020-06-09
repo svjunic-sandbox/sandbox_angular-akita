@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Example4Service } from '~/service/example4.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-example4',
@@ -10,19 +11,21 @@ export class Example4Component implements OnInit, OnDestroy {
   textarea = '';
   textarea2 = '';
 
+  textChangeSubscriber: Subscription;
+
   constructor(private example4Service: Example4Service) {}
 
   ngOnInit(): void {
     // serviceでEventEmitterはアンチパターンらしく、rxjsで購読する
     // https://qiita.com/musou1500/items/941464943b547ca7674f
     this.textarea2 = this.example4Service.text;
-    this.example4Service.textChange$.subscribe((_text) => {
+    this.textChangeSubscriber = this.example4Service.textChange$.subscribe((_text) => {
       this.textarea2 = _text;
     });
   }
 
   ngOnDestroy() {
-    this.example4Service.textChange$.unsubscribe();
+    this.textChangeSubscriber.unsubscribe();
   }
 
   handleTextareaInput(e) {

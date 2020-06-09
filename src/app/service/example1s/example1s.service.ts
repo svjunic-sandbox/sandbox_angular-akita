@@ -1,18 +1,30 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Example1sService {
-  count = 0;
+  _count = 0;
 
-  constructor() {}
+  count$ = new BehaviorSubject<number>(this._count);
+
+  set count(num: any) {
+    if (typeof num === 'number') {
+      this._count = num;
+      this.count$.next(num);
+    }
+  }
+
+  get count() {
+    return this._count;
+  }
 
   increment() {
     this.count++;
   }
 
-  getCount() {
+  getCount(): number {
     return this.count;
   }
 }
