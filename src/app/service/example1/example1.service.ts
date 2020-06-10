@@ -22,9 +22,6 @@ const endpoint = 'http://127.0.0.1:3001/api';
 @Injectable({ providedIn: 'root' })
 export class Example1Service {
   isLoading: false;
-  //taglist: string[];
-  //countList: ICountListObject[];
-  //readonly entities: IExample1CountListObject[];
 
   constructor(private example1Store: Example1Store, private http: HttpClient) {
     console.log('Example1Service constructor');

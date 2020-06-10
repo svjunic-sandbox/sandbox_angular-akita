@@ -19,7 +19,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state(
         'timing2',
         style({
-          transform: 'translateX(200px) translateY(300px) rotate(1360deg)',
+          transform: 'translateX(200px) translateY(300px) rotate(1360deg) scale(2)',
           opacity: 0.5,
           backgroundColor: '#f90',
         })

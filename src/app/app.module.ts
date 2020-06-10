@@ -31,6 +31,7 @@ import { Sample1Component } from './components/sample1/sample1.component';
 import { Example3Component } from './pages/example3/example3.component';
 import { BrPipe } from './module/pipe/br.pipe';
 import { Example4Component } from './example4/example4.component';
+import { InlineStyleComponent } from './pages/inline-style/inline-style.component';
 
 // akita production modeを有効にするらしい
 if (environment.production) {
@@ -38,7 +39,7 @@ if (environment.production) {
 }
 
 @NgModule({
-  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent, Example1sComponent, Sample1Component, Example3Component, BrPipe, Example4Component],
+  declarations: [AppComponent, TopComponent, HeaderComponent, FooterComponent, Example1Component, Example1matComponent, Example2Component, ViewchildComponent, CounterComponent, Example1sComponent, Sample1Component, Example3Component, BrPipe, Example4Component, InlineStyleComponent],
   imports: [
     environment.production ? [] : AkitaNgDevtools,
     BrowserModule,
@@ -52,6 +53,7 @@ if (environment.production) {
     RouterModule.forRoot(
       [
         { path: '', component: TopComponent },
+        { path: 'inline-style', component: InlineStyleComponent },
         { path: 'example1s', component: Example1sComponent },
         { path: 'example1', component: Example1Component },
         { path: 'example1mat', component: Example1matComponent },

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, AfterViewInit } from '@angular/core';
 
 declare global {
   interface Window {
