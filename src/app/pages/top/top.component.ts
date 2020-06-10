@@ -11,4 +11,8 @@ export class TopComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  handleInput(e) {
+    this.hoge = e.target.value;
+  }
 }

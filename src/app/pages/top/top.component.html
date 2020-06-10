@@ -15,6 +15,7 @@
     hogehoge:
     <input type="text" [(ngModel)]="hoge" />
     <input type="text" [ngModel]="hoge" />
+    <input type="text" (input)="handleInput($event)" />
   </label>
   <p>{{ hoge }}</p>
 </fieldset>
