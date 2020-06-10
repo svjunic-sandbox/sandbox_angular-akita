@@ -5,13 +5,6 @@ import { CounterStore } from './counter.store';
 
 @Injectable({ providedIn: 'root' })
 export class CounterService {
-  //constructor(private counterStore: CounterStore, private http: HttpClient) {
-  //}
-
-  //get() {
-  //  return this.http.get('').pipe(tap(entities => this.counterStore.update(entities)));
-  //}
-
   constructor(private counterStore: CounterStore) {
     console.log('counter new された');
   }
